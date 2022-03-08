@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            --bg-color: lightgreen;
+            --text-color: red;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #root {
+            color: (--text-color);
+        }
+
+        .section {
+            color: var(--text-color);
+            width: 200px;
+            height: 200px;
+            margin: 10 5 0 10;
+            padding: 5px;
+            background-color: var(--bg-color);
+            border-radius: 5%;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="section" id="root">
+        <input type="text" id="expenseName" placeholder="Expense Name" name="ExpenseName" />
+        <input type="text" id="expenseValue" placeholder="Expense Amount" name="ExpenseVal" />
+        <button onclick="expenseMgrEntry()">Submit</button>
+    </div>
+
+    <div class="section">
+        <p id="result">...</p>
+    </div>
+
+    <script>
+        var eName = document.getElementById("expenseName");
+        var eValue = document.getElementById("expenseValue");
+        var res= document.getElementById("result");
+        var eArray = [];
+
+        function expenseMgrEntry() {
+            // eArray.push(eName.value, eV)
+            "expense" = {
+                "name": eName.value,
+                "value": eValue.value,
+            }
+            eArray.push(expense);
+            eName.value = "";
+            eValue.value = 0;
+            for(i in eArray){
+                res.innerHTML = eArray[i].name+ " "+eArray[i].value;
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

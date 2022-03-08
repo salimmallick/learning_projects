@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  <script src="script.js"></script> -->
+    <title>Clock</title>
+    <style>
+        body {
+            background-color: yellow;
+        }
+        h1 {
+            color: rgb(58, 202, 58);
+            font-family: sans-serif;
+            position: relative;
+        }
+        #clock {
+            font-family: sans-serif;
+            font-size: larger;
+        }
+
+        button {
+            color: tomato;
+            border-radius: 5px;
+            background-color: blue;
+        }
+    </style> 
+</head>
+<body>
+    <h1>Clock</h1>
+    <div id="Clock">00:00:00</div>
+    
+    <div class="Stopwatch">
+        <h1>Stop Watch</h1>
+        <p><span id="seconds">00</span><span>:</span><span id="minutes">00</span></p>
+        <button id="start" onclick="referenceTime()">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+
+</body>
+<script>
+       function currentTime() {
+        var time = new Date();
+        var hh = time.getHours();
+        var mm = time.getMinutes();
+        var ss = time.getSeconds();
+        var _time = hh + ":" + mm + ":" + ss;
+       // alert(_time);
+        document.getElementById("Clock").innerText = _time;
+        return ss;
+    }
+    //currentTime();
+    var timer = setInterval (currentTime, 1000);  
+</script>
+<script>
+        
+        
+        function referenceTime() {
+            var time = new Date();
+            var hh = time.getHours();
+            var mm = time.getMinutes();
+            var ss = time.getSeconds();
+            var refTime = ss;
+            return refTime;
+        }
+        _refTime = referenceTime();
+        
+        document.getElementById("start").onclick = function() {myFunction()};
+        
+        function myFunction() {
+        document.getElementById("seconds").innerHTML = _refTime;
+        }
+        var timer = setInterval (currentTime, 1000); 
+</script>
+</html>
